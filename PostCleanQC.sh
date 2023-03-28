@@ -1,14 +1,12 @@
 #! /bin/bash
 
 ##############################################
-## The purpose of this script is to learn to evaluate the quality of the data using FastQC
-## Data from NCBI SRA using the SRAtoolkit and the SRA run IDs: https://www.ncbi.nlm.nih.gov/sra/docs/sradownload/
-## 	: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
-## FASTQC 	InPut: *.fastq
+## Purpose: To evaluate the quality of the data after trimming using FastQC
+## FASTQC 	Input: *.fastq
 ##		Output: is a folder for each file. The last line of this script will make a tarball of the output directory to bring back to your computer
 ##
 ##  For running the script on the Alabama Super Computer:
-##	For more information: https://hpcdocs.asc.edu/content/slurm-queue-system
+##	 For more information: https://hpcdocs.asc.edu/content/slurm-queue-system
 ## 	After you have this script in your home directory and you have made it executable using  "chmod +x [script name]", 
 ## 	then run the script by using "run_script [script name]"
 ## 	suggested paramenters are below to submit this script.
@@ -30,8 +28,8 @@ MyID=aubclsb0317
 
 ## Make variable that represents YOUR working directory(WD) in scratch, your Raw data directory (DD) and the pre or postcleaned status (CS).
 ## All the raw reads are present in the Atac_seq_raw directory
-DD=/scratch/$MyID/Atac_seq_raw/cat_raw/Adapter_trim	## Example: DD=/scratch/$MyID/PracticeRNAseq/RawData
-WD=/scratch/$MyID/Atac_seq_raw/cat_raw 		## Example: WD=/scratch/$MyID/PracticeRNAseq
+DD=/scratch/$MyID/Atac_seq_raw/cat_raw/Adapter_trim	    ## Example: DD=/scratch/$MyID/PracticeRNAseq/RawData
+WD=/scratch/$MyID/Atac_seq_raw/cat_raw 		               ## Example: WD=/scratch/$MyID/PracticeRNAseq
 CS=Postclean
  
 ## Make the directories in SCRATCH for holding the raw data 
