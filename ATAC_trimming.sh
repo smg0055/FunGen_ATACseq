@@ -1,13 +1,12 @@
 #! /bin/bash
 
 ###############################################
-## Purpose: To trim sequencing adapters and low quality regions from the raw read data.
-##       and then use FASTQC to evaluate the quality of the data: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+## Purpose: To trim sequencing adapters and low quality regions from the raw read data and using FASTQC to evaluate the quality of the data
 ## Trimmomatic: http://www.usadellab.org/cms/?page=trimmomatic
 ##       Input Data: Raw R1 & R2 reads (FASTQ); Adapter sequences to remove (FASTA)
 ##                   Downloaded read files, R1 and R2 files for each sample if paired-end data (FASTQ)
 ##       Output: Trimmed R1 & R2 paired and unpaired reads (FASTQ)       
-## FASTQC output is a folder for each file. The last line of this script will make a tarball of the output directory to bring back to your computer
+## FASTQC output is a folder for each file and a tarball of the output directory to bring back to your computer
 ##       Input Data: Raw R1 & R2 reads (FASTQ); Adapter sequences to remove (FASTA)
 ##                   Downloaded read files, R1 and R2 files for each sample if paired-end data (FASTQ)
 ##       Output: Trimmed R1 & R2 paired and unpaired reads (FASTQ)       
