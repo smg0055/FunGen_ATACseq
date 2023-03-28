@@ -1,11 +1,9 @@
 #! /bin/bash
 
 ###############################################
-## Purpose: Use FASTQC to evaluate the quality of the data: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
-##      Input Data: NA
-## 			Output: Downloaded read files, R1 and R2 files for each sample if paired-end data (FASTQ)
-## FASTQC 	InPut: Downloade SRA files .fastq
-##		Output: is a folder for each file. The last line of this script will make a tarball of the output directory to bring back to your computer
+## Purpose: Use FASTQC to evaluate the quality of the raw read data
+## FASTQC 	InPut: *.fasta files .fastq
+##		Output: A folder for each file and a tarball of the output directory to bring back to your computer
 ##
 ##  For running the script on the Alabama Super Computer.
 ##	For more information: https://hpcdocs.asc.edu/content/slurm-queue-system
