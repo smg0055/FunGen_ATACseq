@@ -12,3 +12,10 @@ Amanpreet Kaur
 Kayci Messerly  
 Andrew Tillman  
 Shawn Yates  
+
+# Pipeline Order
+CAT_PrecleanQC.sh  
+Adapter_trimming.sh  
+PostCleanQC.sh  
+Get_reference_genome.sh  
+
