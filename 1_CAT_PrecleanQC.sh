@@ -4,9 +4,9 @@
 ##  FASTQC 	Input: Paired end tarball files for each sample (.fq.gz)
 ##		Output: A folder for each file. The last line of this script will make a tarball of the output directory to bring back to your computer
 ##  For running the script on the Alabama Super Computer:
-## 	  After you have this script in your home directory and you have made it executable using  "chmod +x [script name]", 
-##    then run the script by using "run_script [script name]"
-## 	  suggested paramenters are below to submit this script.
+##  After you have this script in your home directory and you have made it executable using  "chmod +x [script name]", 
+##  then run the script by using "run_script [script name]"
+##  suggested paramenters are below to submit this script:
 ##	      	Core: 1
 ##		      Time limit (HH:MM:SS): 04:00:00 
 ##		      Memory: 4gb
