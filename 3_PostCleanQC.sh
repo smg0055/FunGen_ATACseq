@@ -1,19 +1,18 @@
 #! /bin/bash
 
 ##############################################
-## Purpose: To evaluate the quality of the data after trimming using FastQC
-## FASTQC 	Input: *.fastq
+##  Purpose: To evaluate the quality of the data after trimming using FastQC
+##  Input: .fastq files    ## After trimming ##
 ##		Output: is a folder for each file. The last line of this script will make a tarball of the output directory to bring back to your computer
 ##
 ##  For running the script on the Alabama Super Computer:
-##	 For more information: https://hpcdocs.asc.edu/content/slurm-queue-system
 ## 	After you have this script in your home directory and you have made it executable using  "chmod +x [script name]", 
 ## 	then run the script by using "run_script [script name]"
 ## 	suggested paramenters are below to submit this script.
-##		core: 1
-##		time limit (HH:MM:SS): 04:00:00 
+##		Core: 1
+##		Time limit (HH:MM:SS): 04:00:00 
 ##		Memory: 4gb
-##		run on dmc
+##		Run on dmc
 ###############################################
 
 
