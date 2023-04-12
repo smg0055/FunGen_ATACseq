@@ -1,0 +1,29 @@
+1. The quality trimmed reads were then used to know the Lizard reads counts using KneadData (https://github.com/biobakery/kneaddata). KneadData 
+
+we created a bowtie2 database (https://github.com/BenLangmead/bowtie2).
+
+#!/bin/bash
+source /opt/asn/etc/asn-bash-profiles-special/modules.sh
+module load bowtie2/2.2.9
+bowtie2-build /scratch/aubclsb0317/GCF_019175285.1_SceUnd_v1.1_genomic.fna /scratch/aubclsb0317/indexxed_reference --threads 4
+
+2. now mapping of the samples
+
+#!/bin/bash
+source /opt/asn/etc/asn-bash-profiles-special/modules.sh
+module load anaconda/3-2018.12
+for fq1 in /scratch/aubclsb0317/Atac_seq_raw/cat_raw/Adapter_trim/*_1_paired.fastq
+    do
+    echo "working with file $fq1"
+
+    base=$(basename $fq1 _1_paired.fastq)
+    echo "base name is $base"
+
+    fq1=/scratch/aubclsb0317/Atac_seq_raw/cat_raw/Adapter_trim/${base}_1_paired.fastq
+    fq2=/scratch/aubclsb0317/Atac_seq_raw/cat_raw/Adapter_trim/${base}_2_paired.fastq
+
+kneaddata --input $fq1 --input $fq2 --reference-db /scratch/aubclsb0317/Atac_seq_raw/indexed_reference/index_bowtie \
+ --output ./${base}.kneaddata --bypass-trim -t 6
+done
+
+3. the number of reads that were matched to the genome were located in the log file of the run.
