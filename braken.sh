@@ -36,7 +36,6 @@ bracken_combine_outputs.py –-files *_bracken.txt -o lizard_bracken.txt
 # Install the kraken-biom
 pip install git+http://github.com/smdabdoub/kraken-biom.git
 
-#and run the following commadn
-
+# OTU classification 
 #!/bin/bash
 kraken-biom *_bracken_report.txt -o bracken.biom --fmt json
