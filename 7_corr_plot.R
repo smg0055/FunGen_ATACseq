@@ -52,8 +52,8 @@ idx_TS_13 <- indexBam(TS_13_sorted)
 GA_TS_13 <- readGAlignments(TS_13_sorted, param=ScanBamParam(what="flag"))
 
 ## Make a list of the genomic alignment objects ##
-GAlist <- GAlignmentsList(c(TS_01_sorted, TS_02_sorted, TS_03_sorted, TS_04_sorted, TS_05_sorted, 
-            TS_09_sorted, TS_10_sorted, TS_11_sorted, TS_12_sorted, TS_13_sorted))
+GAlist <- GAlignmentsList(c(GA_TS_01, GA_TS_02, GA_TS_03, GA_TS_04, GA_TS_05, 
+                            GA_TS_09, GA_TS_10, GA_TS_11, GA_TS_12, GA_TS_13))
 
 #estimateLibComplexity(readsDupFreq(TS_01_sorted)) # Used to test if one of the objects would plot as the class of object we want for plotting
 
