@@ -63,3 +63,15 @@ do
     tag=${file%.sort.sam};
     samtools view -q 20 -f 0x0002 -F 0x0004 -F 0x0008 -Sb "$file" > $tag.bam
 done
+
+#step5: PCR duplicates removal
+
+#!/bin/bash
+module load picard/2.24.0
+for file in *.bam;
+do
+tag=${file%.bam};
+picard MarkDuplicates -I "$file" -O $tag.sort.bam -M $tag.dupstat.txt --REMOVE_DUPLICATES true --RE
+MOVE_SEQUENCING_DUPLICATES true 
+done 
+
