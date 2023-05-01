@@ -1,0 +1,1 @@
+cmd = ./peakcalls/TS_05.bam_summits.bed chicken TS_05.bam_summits -p 8
