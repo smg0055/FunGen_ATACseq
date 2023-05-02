@@ -1,0 +1,11 @@
+﻿Sample Name,Sample,Treatment,Replicate
+TS_01_bracken_report,TS_01,Control,1
+TS_03_bracken_report,TS_03,Control,2
+TS_10_bracken_report,TS_10,Control,3
+TS_11_bracken_report,TS_11,Control,4
+TS_12_bracken_report,TS_12,Control,5
+TS_02_bracken_report,TS_02,HeatStress,1
+TS_04_bracken_report,TS_04,HeatStress,2
+TS_05_bracken_report,TS_05,HeatStress,3
+TS_09_bracken_report,TS_09,HeatStress,4
+TS_13_bracken_report,TS_13,HeatStress,5
