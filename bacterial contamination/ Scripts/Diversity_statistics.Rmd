@@ -159,10 +159,10 @@ counts_lizard <- read.csv("/Users/amanpreetkaur/Library/CloudStorage/Box-Box/Fun
 
 
 counts_lizard$log <- log10(counts_lizard$counts)
-before <- counts_lizard[counts_lizard$which %in% c("not-matched" , "total", "Lizard"), ]
+before <- counts_lizard[counts_lizard$which %in% c( "total", "Lizard"), ]
 After <- counts_lizard[counts_lizard$which %in% c("Human" , "prokaryotes", "Lizard"), ]
 
-sample_level1 <- factor(before$which, level=c("total", "Lizard", "not-matched" ))
+sample_level1 <- factor(before$which, level=c("total", "Lizard" ))
 sample_level2 <- factor(After$which, level=c(  "Lizard", "prokaryotes", "Human"  ))
 
 B = before %>%
@@ -180,7 +180,7 @@ B = before %>%
     strip.text = element_text(size = 7))
 #element_text(face="bold", color="#993333",  size=14, angle=45)
 B
-#ggsave( "/Users/amanpreetkaur/Downloads/total_reads.pdf", width = 3.5, height = 3.0, units="in", dpi=800)
+ggsave( "/Users/amanpreetkaur/Downloads/total_reads.pdf", width = 3.5, height = 3.0, units="in", dpi=800)
 
 A = After %>%
   ggplot(aes(x =Sample, y = log, fill = sample_level2)) +
@@ -205,47 +205,5 @@ A
 shapiro.test(before$counts)
 #significance test
 kruskal.test(before$counts ~ before$Treatment)
-kruskal.test( before$counts ~ before$Sample )
-kruskal.test( before$counts ~ before$which )
 dunnTest(before$counts ~ before$which)
-
-lizard_con <- before[before$Treatment != "HeatStress", ]
-kruskal.test( lizard_con$counts ~ lizard_con$which )
-dunnTest(lizard_con$counts ~ lizard_con$which)
-
-lizard_heat <- before[before$Treatment != "Control", ]
-kruskal.test( lizard_heat$counts ~ lizard_heat$which )
-dunnTest(lizard_heat$counts ~ lizard_heat$which)
-```
-
-
-```{r}
-#normality test
-shapiro.test(counts_lizard$log)
-#significance test
-kruskal.test( counts_lizard$log ~ counts_lizard$Treatment)
-kruskal.test( counts_lizard$log ~ counts_lizard$Sample )
-```
-
-
-```{r}
-counts_heat <- counts_lizard[counts_lizard$Treatment != "Control", ]
-
-kruskal.test(counts_heat$log ~ counts_heat$which )
-library(FSA)
-dunnTest(counts_heat$log ~ counts_heat$which )
-kruskal.test( counts_heat$log ~ counts_heat$Sample )
-
-
-```
-
-
-```{r}
-counts_lizard_con <- counts_lizard[counts_lizard$Treatment != "HeatStress", ]
-kruskal.test( counts_lizard_con$log ~ counts_lizard_con$which )
-dunnTest(counts_lizard_con$log ~ counts_lizard_con$which )
-kruskal.test( counts_lizard_con$log ~ counts_lizard_con$Sample )
-
-```
-
 
