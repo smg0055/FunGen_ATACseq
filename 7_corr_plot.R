@@ -1,7 +1,3 @@
-### Plotting requires more than my computer's 8Gb of working memory, so this was my attempt to increase it ###
-
-Sys.setenv('R_MAX_VSIZE'=32000000000)
-
 ## Load required librarues - Download using BiocManager if needed
 library(BiocManager)
 library(MotifDb)
